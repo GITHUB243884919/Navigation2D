@@ -1,0 +1,35 @@
+ManifestFileVersion: 0
+CRC: 1418433829
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: scenes/scene_nav2d
+      Dependencies:
+        Dependency_0: textures/player
+        Dependency_1: textures/border_vertical
+        Dependency_2: textures/wall
+        Dependency_3: textures/border_horizontal
+    Info_1:
+      Name: textures/player
+      Dependencies: {}
+    Info_2:
+      Name: textures/border_vertical
+      Dependencies: {}
+    Info_3:
+      Name: textures/wall
+      Dependencies: {}
+    Info_4:
+      Name: scenes/main
+      Dependencies: {}
+    Info_5:
+      Name: textures/border_horizontal
+      Dependencies: {}
+    Info_6:
+      Name: asset-bundle
+      Dependencies: {}
+    Info_7:
+      Name: scenes/test
+      Dependencies: {}
+    Info_8:
+      Name: prefabs/cube
+      Dependencies: {}

@@ -11,7 +11,7 @@ public class CreateAssetBundles
         string fileMapPath = fileMapFullPath.Substring(fileMapFullPath.LastIndexOf("Assets/GameResources/"));
         UnityEngine.Debug.LogError(fileMapPath);
         StreamWriter sw = new StreamWriter(fileMapFullPath);
-
+        string swContent = "";
         string[] filePaths = AssetDatabase.GetAllAssetPaths();
         foreach (var filePath in filePaths)
         {
@@ -60,11 +60,13 @@ public class CreateAssetBundles
             importer.assetBundleName = bundleName;
 
             //记录asset和bundle对应关系
-            //UnityEngine.Debug.LogError(fileFindPath + " " + bundleName);
-            sw.WriteLine(fileFindPath + "," + bundleName);
+            swContent += (fileFindPath + "," + bundleName + "\r\n");
         }
         //对于打包到一起的,单独写对应关系
-        //sw.WriteLine("textures/unitylogo" + "," + "textures/unitylogo");
+        //swContent += ("textures/unitylogo" + "," + "textures/unitylogo" + "\r\n");
+        
+        //不用writeline写配置文件。不同平台换行不一致，解析不好解析
+        sw.Write(swContent);
         sw.Flush();
         sw.Dispose();
         AssetDatabase.Refresh();

@@ -66,10 +66,9 @@ namespace UFrame.ResourceManagement
             LoadAll,
         }
 
+#region 初始化assetbundle配置文件
         public  void Init()
         {
-            //Unable to open archive file: jar:file:///data/app/com.fzy.Navigation2D-2/base.apk!/assets/Bundles/cube
-            //Unable to open archive file: jar:file:///data/app/com.fzy.Navigation2D-1/base.apk!/assets/Bundles/cube
             string ApplicationStreamingPath = Application.streamingAssetsPath;
 //#if UNITY_EDITOR
 //            Application.streamingAssetsPath;
@@ -92,10 +91,7 @@ namespace UFrame.ResourceManagement
         void Loadmanifest()
         {
             string bundlePath = GetBundlePath("Bundles");
-            Debug.LogError("Bundles bundlePath " + bundlePath);
             var bundle = AssetBundle.LoadFromFile(bundlePath);
-            Debug.LogError("Bundles bundle != null " + (bundle!=null));
-
             manifest = bundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
             bundle.Unload(false);
         }
@@ -103,30 +99,29 @@ namespace UFrame.ResourceManagement
         void LoadAssetMap()
         {
             string bundlePath = GetBundlePath("asset-bundle");
-            Debug.LogError("asset-bundle bundlePath " + bundlePath);
             var bundle = AssetBundle.LoadFromFile(bundlePath);
-            Debug.LogError("asset-bundle bundle != null " + (bundle != null));
             var txt = bundle.LoadAsset<TextAsset>("asset-bundle");
-            Debug.LogError("txt != null " + (txt != null));
             string strTxt = txt.text;
 
-            //这里如果是非windows平台打包，换行符可能会有问题
+            //确认asset-bundle是用“\r\n”换行，如果不是会出问题
             string[] line = strTxt.Split(new char[] { '\r', '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
 
             for (int i = 0; i < line.Length; ++i)
             {
-                //Debug.LogError("[" + line[i] + "]");
                 string[] temp = line[i].Split(',');
-                for(int j = 0; j < temp.Length; ++j)
-                {
-                    //Debug.LogError("{" + temp[j] + "}");
-                }
                 assetMap.Add(temp[0], temp[1]);
-
             }
             bundle.Unload(true);
         }
 
+
+        /// <summary>
+        /// Todo 减少IO
+        /// 应该用个配置文件来判断，是否是包外路径
+        /// 比如有一个包外的文件列表，如果在这个列表里，就返回沙盒路径
+        /// </summary>
+        /// <param name="bundleName"></param>
+        /// <returns></returns>
         string GetBundlePath(string bundleName)
         {
             string outerPath = Path.Combine(outerBundleRootPath, bundleName);
@@ -152,6 +147,7 @@ namespace UFrame.ResourceManagement
             return result;
         }
 
+#endregion
 
 #region 释放接口
         /// <summary>
@@ -160,7 +156,7 @@ namespace UFrame.ResourceManagement
         /// 2.把引用计数为0的资源引用取出。本类的DestroyXX减少资源引用计数。
         /// 3.然后看看是否能把对应的bundle能释放 
         /// </summary>
-        public  void RealseAllUnUse()
+        public void RealseAllUnUse()
         {
             unUseGameObject.Clear();
             bool could = true;
@@ -288,15 +284,15 @@ namespace UFrame.ResourceManagement
             }
 
         }
-#endregion
+        #endregion
 
-
+#region 同步/异步公用函数
         /// <summary>
         /// 维护资源和GameObject的引用关系
         /// </summary>
         /// <param name="go"></param>
         /// <param name="assetHolder"></param>
-        public  void AddGameObjectAssetHolder(GameObject go, AssetHolder assetHolder)
+        public void AddGameObjectAssetHolder(GameObject go, AssetHolder assetHolder)
         {
             //记录资源引用
             assetHolder.AddRefence(go);
@@ -305,11 +301,11 @@ namespace UFrame.ResourceManagement
             if (!goAssetHolders.TryGetValue(go, out assetHolders))
             {
                 assetHolders = new HashSet<AssetHolder>();
-                //Debug.LogError("add " + go.name);
                 goAssetHolders.Add(go, assetHolders);
             }
             assetHolders.Add(assetHolder);
         }
+#endregion
 
     }
 }

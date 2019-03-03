@@ -65,7 +65,7 @@ public class CreateAssetBundles
         //对于打包到一起的,单独写对应关系
         //swContent += ("textures/unitylogo" + "," + "textures/unitylogo" + "\r\n");
         
-        //不用writeline写配置文件。不同平台换行不一致，解析不好解析
+        //不用writeline写配置文件。不同平台换行不一致，runtime解析换行不好判断
         sw.Write(swContent);
         sw.Flush();
         sw.Dispose();

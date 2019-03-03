@@ -65,8 +65,7 @@ namespace UFrame.ResourceManagement
             string bundleName = GetBundleName(assetName);
             AssetBundle bundle = LoadBundle(assetName, bundleName);
             string[] scenes = bundle.GetAllScenePaths();
-            Debug.LogError(scenes[0]);
-            //UnityEngine.SceneManagement.SceneManager.LoadScene(scenes[0], UnityEngine.SceneManagement.LoadSceneMode.Single);
+            //Debug.LogError(scenes[0]);
             UnityEngine.SceneManagement.SceneManager.LoadScene(scenes[0]);
         }
 
@@ -104,7 +103,7 @@ namespace UFrame.ResourceManagement
             string bundlePath = GetBundlePath(bundleName);
             if (!bundleHolders.TryGetValue(bundleName, out bundleHolder))
             {
-                Debug.LogError("LoadFromFile [" + bundlePath + "]");
+                //Debug.LogError("LoadFromFile [" + bundlePath + "]");
                 bundle = AssetBundle.LoadFromFile(bundlePath);
                 //存bundleHolder
                 bundleHolder = new BundleHolder(bundle);

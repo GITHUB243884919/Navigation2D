@@ -82,7 +82,7 @@ namespace UFrame.ResourceManagement
 //#endif
 //#endif
             innerBundleRootPath = Path.Combine(ApplicationStreamingPath, "Bundles/");
-            Debug.LogError(innerBundleRootPath);
+            //Debug.LogError(innerBundleRootPath);
             outerBundleRootPath = Path.Combine(Application.persistentDataPath, "Bundles/");
             Loadmanifest();
             LoadAssetMap();

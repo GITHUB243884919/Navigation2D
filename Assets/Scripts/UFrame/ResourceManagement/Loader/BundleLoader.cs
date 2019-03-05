@@ -70,27 +70,15 @@ namespace UFrame.ResourceManagement
         public  void Init()
         {
             string ApplicationStreamingPath = Application.streamingAssetsPath;
-//#if UNITY_EDITOR
-//            Application.streamingAssetsPath;
-//#else
-//#if UNITY_ANDROID   //安卓  
-//            Application.dataPath + "!/assets/";
-//#elif UNITY_IPHONE  //iPhone  
-//            Application.dataPath + "/Raw/";
-//#else
-//            Application.streamingAssetsPath;
-//#endif
-//#endif
-            innerBundleRootPath = Path.Combine(ApplicationStreamingPath, "Bundles/");
-            //Debug.LogError(innerBundleRootPath);
-            outerBundleRootPath = Path.Combine(Application.persistentDataPath, "Bundles/");
+            innerBundleRootPath = Path.Combine(ApplicationStreamingPath, UFrameConst.Bundle_Root_Dir);
+            outerBundleRootPath = Path.Combine(Application.persistentDataPath, UFrameConst.Bundle_Root_Dir);
             Loadmanifest();
             LoadAssetMap();
         }
 
         void Loadmanifest()
         {
-            string bundlePath = GetBundlePath("Bundles");
+            string bundlePath = GetBundlePath(UFrameConst.Bundle_Root_Dir + UFrameConst.Bundle_Extension);
             var bundle = AssetBundle.LoadFromFile(bundlePath);
             manifest = bundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
             bundle.Unload(false);
@@ -98,9 +86,12 @@ namespace UFrame.ResourceManagement
 
         void LoadAssetMap()
         {
-            string bundlePath = GetBundlePath("asset-bundle");
+            string bundlePath = UFrameConst.Asset_Bundle_Txt_Name;
+            bundlePath = Path.GetFileNameWithoutExtension(bundlePath);
+            bundlePath += UFrameConst.Bundle_Extension;
+            bundlePath = GetBundlePath(bundlePath);
             var bundle = AssetBundle.LoadFromFile(bundlePath);
-            var txt = bundle.LoadAsset<TextAsset>("asset-bundle");
+            var txt = bundle.LoadAsset<TextAsset>(Path.GetFileNameWithoutExtension(bundlePath));
             string strTxt = txt.text;
 
             //确认asset-bundle是用“\r\n”换行，如果不是会出问题

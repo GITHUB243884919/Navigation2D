@@ -1,98 +1,98 @@
 ManifestFileVersion: 0
-CRC: 1957494685
+CRC: 1308889486
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: scenes_main
+      Name: lua_cjson.unity3d
       Dependencies: {}
     Info_1:
-      Name: scenes_scripts_from_file
+      Name: lua_common.unity3d
       Dependencies: {}
     Info_2:
-      Name: scenes_scene_nav2d
-      Dependencies:
-        Dependency_0: textures_border_vertical
-        Dependency_1: textures_border_horizontal
-        Dependency_2: textures_player
-        Dependency_3: textures_wall
+      Name: lua_controller.unity3d
+      Dependencies: {}
     Info_3:
-      Name: textures_border_vertical
+      Name: lua_game.unity3d
       Dependencies: {}
     Info_4:
-      Name: textures_border_horizontal
+      Name: lua_jit.unity3d
       Dependencies: {}
     Info_5:
-      Name: textures_player
+      Name: lua_logic.unity3d
       Dependencies: {}
     Info_6:
-      Name: textures_wall
+      Name: lua_lpeg.unity3d
       Dependencies: {}
     Info_7:
-      Name: prefabs_cube
+      Name: lua_misc.unity3d
       Dependencies: {}
     Info_8:
-      Name: lua_3rd_pbc
+      Name: lua_protobuf.unity3d
       Dependencies: {}
     Info_9:
-      Name: lua_3rd_sproto
+      Name: lua_socket.unity3d
       Dependencies: {}
     Info_10:
-      Name: lua_jit
+      Name: lua_system.unity3d
       Dependencies: {}
     Info_11:
-      Name: lua_3rd_luabitop
+      Name: lua_unityengine.unity3d
       Dependencies: {}
     Info_12:
-      Name: lua_unityengine
+      Name: lua_view.unity3d
       Dependencies: {}
     Info_13:
-      Name: lua
+      Name: lua_3rd_cjson.unity3d
       Dependencies: {}
     Info_14:
-      Name: lua_protobuf
+      Name: lua_3rd_luabitop.unity3d
       Dependencies: {}
     Info_15:
-      Name: lua_3rd_pblua
+      Name: lua_3rd_pbc.unity3d
       Dependencies: {}
     Info_16:
-      Name: lua_game
+      Name: lua_3rd_pblua.unity3d
       Dependencies: {}
     Info_17:
-      Name: lua_view
+      Name: lua_3rd_sproto.unity3d
       Dependencies: {}
     Info_18:
-      Name: lua_controller
+      Name: lua_system_injection.unity3d
       Dependencies: {}
     Info_19:
-      Name: lua_misc
+      Name: lua_system_reflection.unity3d
       Dependencies: {}
     Info_20:
-      Name: lua_socket
+      Name: lua.unity3d
       Dependencies: {}
     Info_21:
-      Name: lua_3rd_cjson
+      Name: prefabs_cube.unity3d
       Dependencies: {}
     Info_22:
-      Name: lua_common
+      Name: scenes_main.unity3d
       Dependencies: {}
     Info_23:
-      Name: lua_logic
-      Dependencies: {}
+      Name: scenes_scene_nav2d.unity3d
+      Dependencies:
+        Dependency_0: textures_border_horizontal.unity3d
+        Dependency_1: textures_border_vertical.unity3d
+        Dependency_2: textures_player.unity3d
+        Dependency_3: textures_wall.unity3d
     Info_24:
-      Name: lua_cjson
+      Name: scenes_scripts_from_file.unity3d
       Dependencies: {}
     Info_25:
-      Name: asset-bundle
+      Name: textures_border_horizontal.unity3d
       Dependencies: {}
     Info_26:
-      Name: lua_system
+      Name: textures_border_vertical.unity3d
       Dependencies: {}
     Info_27:
-      Name: lua_system_injection
+      Name: textures_player.unity3d
       Dependencies: {}
     Info_28:
-      Name: lua_system_reflection
+      Name: textures_wall.unity3d
       Dependencies: {}
     Info_29:
-      Name: lua_lpeg
+      Name: asset-bundle.unity3d
       Dependencies: {}

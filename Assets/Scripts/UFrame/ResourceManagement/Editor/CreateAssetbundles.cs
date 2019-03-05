@@ -1,26 +1,16 @@
 ﻿using UnityEngine;
 using UnityEditor;
-//using System;
-//using System.Collections;
 using System.Collections.Generic;
-//using System.Reflection;
-//using System.Text;
 using System.IO;
-//using System.Diagnostics;
-//using LuaInterface;
-
-//using Object = UnityEngine.Object;
-//using Debug = UnityEngine.Debug;
-//using Debugger = LuaInterface.Debugger;
-//using System.Threading;
 using UFrame;
+
 public class CreateAssetBundles
 {
     static void BuildLuaBundle(StreamWriter sw, string subDir, string sourceDir)
     {
         string[] files = Directory.GetFiles(sourceDir + subDir, "*.bytes");
         //如果不把“/”换成"_"会出现打包不成功，原因是不能创建目录
-        string bundleName = subDir == null ? "lua" : "lua" + subDir.Replace('/', '_');
+        string bundleName = subDir == null ? "lua" + UFrameConst.Bundle_Extension : "lua" + subDir.Replace('/', '_') + UFrameConst.Bundle_Extension;
         bundleName = bundleName.ToLower();
 
         string swContent = "";
@@ -154,10 +144,13 @@ public class CreateAssetBundles
 
         string assetBundleTxtPathInAssets = "Assets/" + UFrameConst.GameResources_Dir + "/" + UFrameConst.Asset_Bundle_Txt_Name;
         var importerFileMap = AssetImporter.GetAtPath(assetBundleTxtPathInAssets);
-        importerFileMap.assetBundleName = Path.GetFileNameWithoutExtension(UFrameConst.Asset_Bundle_Txt_Name);
+        importerFileMap.assetBundleName = Path.GetFileNameWithoutExtension(UFrameConst.Asset_Bundle_Txt_Name) + UFrameConst.Bundle_Extension;
 
         string assetBundleDirectory = "Assets/StreamingAssets/" + UFrameConst.Bundle_Root_Dir;
         BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.DeterministicAssetBundle, EditorUserBuildSettings.activeBuildTarget);
+
+        //把Manifest文件加一个后缀，方便下载
+        ModifyManifestFileName();
 
         AssetDatabase.Refresh();
     }
@@ -240,6 +233,7 @@ public class CreateAssetBundles
             string bundleName = filePath.Substring(GameResourcePath.Length + 1);
             bundleName = bundleName.Replace("/", "_");
             bundleName = Path.GetFileNameWithoutExtension(bundleName);
+            bundleName += UFrameConst.Bundle_Extension;
 
             string bundlePath = filePath.Substring(GameResourcePath.Length + 1);
             int lastSplitIndex = bundlePath.LastIndexOf('.');
@@ -255,6 +249,13 @@ public class CreateAssetBundles
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
+    }
+
+    static void ModifyManifestFileName()
+    {
+        string path = "Assets/StreamingAssets/" + UFrameConst.Bundle_Root_Dir + "/" + UFrameConst.Bundle_Root_Dir;
+        FileInfo fi = new FileInfo(path);
+        fi.MoveTo(path + UFrameConst.Bundle_Extension);
     }
 
     //[MenuItem("资源管理/bundle命名")]

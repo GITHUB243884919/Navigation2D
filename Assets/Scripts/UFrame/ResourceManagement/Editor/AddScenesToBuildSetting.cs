@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
-
+using UFrame;
 public class AddScenesToBuildSetting
 {
     [MenuItem("UFrame框架/资源管理/开发模式/添加场景")]
@@ -11,7 +11,7 @@ public class AddScenesToBuildSetting
     {
         List<string> scenesPath = new List<string>();
 
-        string scenesPathRoot = "Assets/GameResources/scenes";
+        string scenesPathRoot = "Assets/" + UFrameConst.Scene_Dir;
         foreach (var path in Directory.GetFiles(scenesPathRoot, "*.unity", SearchOption.AllDirectories))
         {
             scenesPath.Add(path.Replace("\\", "/"));

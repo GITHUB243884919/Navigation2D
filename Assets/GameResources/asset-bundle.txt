@@ -1,9 +1,0 @@
-scenes/scene_nav2d,scenes/scene_nav2d
-textures/player,textures/player
-prefabs/cube,prefabs/cube
-textures/border_vertical,textures/border_vertical
-asset-bundle,asset-bundle
-scenes/test,scenes/test
-textures/wall,textures/wall
-scenes/main,scenes/main
-textures/border_horizontal,textures/border_horizontal

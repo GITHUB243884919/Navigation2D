@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using UnityEditor;
-using System;
-using System.Collections;
+//using System;
+//using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+//using System.Reflection;
+//using System.Text;
 using System.IO;
-using System.Diagnostics;
-using LuaInterface;
+//using System.Diagnostics;
+//using LuaInterface;
 
-using Object = UnityEngine.Object;
-using Debug = UnityEngine.Debug;
-using Debugger = LuaInterface.Debugger;
-using System.Threading;
+//using Object = UnityEngine.Object;
+//using Debug = UnityEngine.Debug;
+//using Debugger = LuaInterface.Debugger;
+//using System.Threading;
 using UFrame;
 public class CreateAssetBundles
 {
@@ -130,7 +130,7 @@ public class CreateAssetBundles
         }
     }
 
-    [MenuItem("UFrame/资源管理/发布模式/创建Bundle")]
+    [MenuItem("UFrame框架/资源管理/发布模式/创建Bundle")]
     public static void BuildAll()
     {
         string fileMapFullPath = Path.Combine(Application.dataPath, UFrameConst.GameResources_Dir);
@@ -246,7 +246,7 @@ public class CreateAssetBundles
         AssetDatabase.Refresh();
     }
 
-    [MenuItem("资源管理/bundle命名")]
+    //[MenuItem("资源管理/bundle命名")]
     static void SetBundleName()
     {
         string fileMapFullPath = UnityEngine.Application.dataPath + "/GameResources/asset-bundle.txt";

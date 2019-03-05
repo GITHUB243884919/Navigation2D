@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3840717881
+CRC: 558036915
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 95fc5036543eddd376585a79c0f2be28
+    Hash: 67e06fe0bff1ed953bb7fa0b648faf36
   TypeTreeHash:
     serializedVersion: 2
     Hash: 359adb595aec36b61851d7ee615b9a67
@@ -58,7 +58,7 @@ ClassTypes:
 Assets:
 - Assets/GameResources/scenes/scene_nav2d.unity
 Dependencies:
-- D:/Fzy/Code/LuaFramework_UGUI-master2/LuaFramework_UGUI-master/Assets/StreamingAssets/Bundles/textures_border_horizontal
-- D:/Fzy/Code/LuaFramework_UGUI-master2/LuaFramework_UGUI-master/Assets/StreamingAssets/Bundles/textures_border_vertical
-- D:/Fzy/Code/LuaFramework_UGUI-master2/LuaFramework_UGUI-master/Assets/StreamingAssets/Bundles/textures_player
-- D:/Fzy/Code/LuaFramework_UGUI-master2/LuaFramework_UGUI-master/Assets/StreamingAssets/Bundles/textures_wall
+- D:/Fzy/Code/Navigation2D/Assets/StreamingAssets/Bundles/textures_border_vertical
+- D:/Fzy/Code/Navigation2D/Assets/StreamingAssets/Bundles/textures_border_horizontal
+- D:/Fzy/Code/Navigation2D/Assets/StreamingAssets/Bundles/textures_player
+- D:/Fzy/Code/Navigation2D/Assets/StreamingAssets/Bundles/textures_wall

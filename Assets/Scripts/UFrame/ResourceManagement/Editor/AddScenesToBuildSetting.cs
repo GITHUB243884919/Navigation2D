@@ -6,7 +6,7 @@ using System.IO;
 
 public class AddScenesToBuildSetting
 {
-    [MenuItem("UFrame/资源管理/开发模式/添加场景")]
+    [MenuItem("UFrame框架/资源管理/开发模式/添加场景")]
     static void AddAllScenes()
     {
         List<string> scenesPath = new List<string>();

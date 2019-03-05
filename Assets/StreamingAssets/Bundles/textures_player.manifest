@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 197060859
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 28b2521f1a651d750562963055c979d6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 460b4f5d62b6facbccf7c01637df8f00
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameResources/textures/player.png
+Dependencies: []

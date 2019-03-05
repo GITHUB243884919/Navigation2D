@@ -1,0 +1,64 @@
+ManifestFileVersion: 0
+CRC: 3840717881
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 95fc5036543eddd376585a79c0f2be28
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 359adb595aec36b61851d7ee615b9a67
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 60
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 68
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 92
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 031a2185e48bdd84ba593dd6f6669a3e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 49a5c9d7b83e17d45b4e8dca6dcf94c4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7a99d2eab88b747a9bd011e3d849162f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ad705bba33f3642f4bc26cd844e12c6c, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 124
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 238
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameResources/scenes/scene_nav2d.unity
+Dependencies:
+- D:/Fzy/Code/LuaFramework_UGUI-master2/LuaFramework_UGUI-master/Assets/StreamingAssets/Bundles/textures_border_horizontal
+- D:/Fzy/Code/LuaFramework_UGUI-master2/LuaFramework_UGUI-master/Assets/StreamingAssets/Bundles/textures_border_vertical
+- D:/Fzy/Code/LuaFramework_UGUI-master2/LuaFramework_UGUI-master/Assets/StreamingAssets/Bundles/textures_player
+- D:/Fzy/Code/LuaFramework_UGUI-master2/LuaFramework_UGUI-master/Assets/StreamingAssets/Bundles/textures_wall

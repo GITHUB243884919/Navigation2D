@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3353931118
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 75af7a4c7b718002ea01f37e6b8d9e95
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 460b4f5d62b6facbccf7c01637df8f00
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameResources/textures/border_horizontal.png
+Dependencies: []

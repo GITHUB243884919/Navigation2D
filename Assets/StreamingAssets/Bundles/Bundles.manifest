@@ -1,0 +1,98 @@
+ManifestFileVersion: 0
+CRC: 2163124977
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: lua_cjson
+      Dependencies: {}
+    Info_1:
+      Name: lua_common
+      Dependencies: {}
+    Info_2:
+      Name: lua_controller
+      Dependencies: {}
+    Info_3:
+      Name: lua_jit
+      Dependencies: {}
+    Info_4:
+      Name: lua_logic
+      Dependencies: {}
+    Info_5:
+      Name: lua_lpeg
+      Dependencies: {}
+    Info_6:
+      Name: lua_misc
+      Dependencies: {}
+    Info_7:
+      Name: lua_protobuf
+      Dependencies: {}
+    Info_8:
+      Name: lua_socket
+      Dependencies: {}
+    Info_9:
+      Name: lua_system
+      Dependencies: {}
+    Info_10:
+      Name: lua_unityengine
+      Dependencies: {}
+    Info_11:
+      Name: lua_view
+      Dependencies: {}
+    Info_12:
+      Name: lua_3rd_cjson
+      Dependencies: {}
+    Info_13:
+      Name: lua_3rd_luabitop
+      Dependencies: {}
+    Info_14:
+      Name: lua_3rd_pbc
+      Dependencies: {}
+    Info_15:
+      Name: lua_3rd_pblua
+      Dependencies: {}
+    Info_16:
+      Name: lua_3rd_sproto
+      Dependencies: {}
+    Info_17:
+      Name: lua_system_injection
+      Dependencies: {}
+    Info_18:
+      Name: lua_system_reflection
+      Dependencies: {}
+    Info_19:
+      Name: lua
+      Dependencies: {}
+    Info_20:
+      Name: asset-bundle
+      Dependencies: {}
+    Info_21:
+      Name: prefabs_cube
+      Dependencies: {}
+    Info_22:
+      Name: scenes_main
+      Dependencies: {}
+    Info_23:
+      Name: scenes_scene_nav2d
+      Dependencies:
+        Dependency_0: textures_border_horizontal
+        Dependency_1: textures_border_vertical
+        Dependency_2: textures_player
+        Dependency_3: textures_wall
+    Info_24:
+      Name: textures_border_horizontal
+      Dependencies: {}
+    Info_25:
+      Name: textures_border_vertical
+      Dependencies: {}
+    Info_26:
+      Name: textures_player
+      Dependencies: {}
+    Info_27:
+      Name: textures_wall
+      Dependencies: {}
+    Info_28:
+      Name: lua_game
+      Dependencies: {}
+    Info_29:
+      Name: scenes_scripts_from_file
+      Dependencies: {}

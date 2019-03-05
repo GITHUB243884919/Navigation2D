@@ -139,7 +139,7 @@ public class CreateAssetBundles
         StreamWriter sw = new StreamWriter(fileMapFullPath);
 
         //清理buildsetting中的场景，只保留入口场景
-
+        OnlyMainScene();
 
         //LUA打包
         BuildLuaNotJitBundles(sw);
@@ -160,6 +160,17 @@ public class CreateAssetBundles
         BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.DeterministicAssetBundle, EditorUserBuildSettings.activeBuildTarget);
 
         AssetDatabase.Refresh();
+    }
+
+    public static void OnlyMainScene()
+    {
+        EditorBuildSettingsScene[] onlyMain = new EditorBuildSettingsScene[1];
+        string fullPath = "Assets/" + UFrameConst.Main_Scene_Path;
+        onlyMain[0] = new EditorBuildSettingsScene(fullPath, true);
+        EditorBuildSettings.scenes = onlyMain;
+        AssetDatabase.Refresh();
+        AssetDatabase.SaveAssets();
+
     }
 
     public static void BuildLuaNotJitBundles(StreamWriter sw)
